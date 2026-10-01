@@ -13,6 +13,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
@@ -67,6 +68,22 @@ class MainActivity : ComponentActivity() {
     private fun hasNotificationAccess(): Boolean {
         val enabledListeners = NotificationManagerCompat.getEnabledListenerPackages(this)
         return enabledListeners.contains(packageName)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SetupScreenPreviewGranted() {
+    MaterialTheme {
+        SetupScreen(hasNotificationAccess = true, onRequestNotificationAccess = {})
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SetupScreenPreviewMissing() {
+    MaterialTheme {
+        SetupScreen(hasNotificationAccess = false, onRequestNotificationAccess = {})
     }
 }
 

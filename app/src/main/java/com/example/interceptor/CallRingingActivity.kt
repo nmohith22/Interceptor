@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
@@ -77,6 +78,14 @@ class CallRingingActivity : ComponentActivity() {
         intent.getStringExtra("FACETIME_URL")?.let {
             faceTimeUrl = it
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun RingingScreenPreview() {
+    MaterialTheme {
+        RingingScreen(onAccept = {}, onDecline = {})
     }
 }
 
