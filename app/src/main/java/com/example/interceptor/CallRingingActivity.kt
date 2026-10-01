@@ -25,7 +25,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
@@ -81,7 +80,7 @@ class CallRingingActivity : ComponentActivity() {
     }
 }
 
-@Preview(showBackground = true)
+@androidx.compose.ui.tooling.preview.Preview(showBackground = true)
 @Composable
 fun RingingScreenPreview() {
     MaterialTheme {
