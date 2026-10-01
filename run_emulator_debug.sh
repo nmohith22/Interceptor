@@ -38,13 +38,4 @@ echo "Installing APK..."
 echo "Launching App..."
 "$ADB" shell am start -n "com.example.interceptor/com.example.interceptor.MainActivity"
 
-echo "Waiting 3 seconds for UI to render..."
-sleep 3
-
-echo "Taking screenshot..."
-"$ADB" exec-out screencap -p > debug_screen.png
-
-echo "Done! Screenshot saved to ./debug_screen.png"
-
-echo "Opening screenshot in VS Code..."
-code ./debug_screen.png
+echo "Done! The emulator is running and the app is launched."
