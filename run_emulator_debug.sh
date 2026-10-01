@@ -2,7 +2,9 @@
 set -e
 
 # Default to the known Windows path if ANDROID_HOME is not set
-ANDROID_SDK="${ANDROID_HOME:-C:/Users/mskyl/android_sdk}"
+export JAVA_HOME="${JAVA_HOME:-C:/Users/mskyl/openjdk/jdk-17.0.11+9}"
+export ANDROID_HOME="${ANDROID_HOME:-C:/Users/mskyl/android_sdk}"
+export ANDROID_SDK="$ANDROID_HOME"
 AVD_NAME="test_avd"
 
 AVD_MANAGER="$ANDROID_SDK/cmdline-tools/latest/bin/avdmanager.bat"
