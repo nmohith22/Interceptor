@@ -42,7 +42,10 @@ echo "Waiting 3 seconds for UI to render..."
 sleep 3
 
 echo "Taking screenshot..."
-"$ADB" shell screencap -p /sdcard/debug_screen.png
+"$ADB" shell screencap /sdcard/debug_screen.png
 "$ADB" pull /sdcard/debug_screen.png ./debug_screen.png
 
 echo "Done! Screenshot saved to ./debug_screen.png"
+
+echo "Opening screenshot in VS Code..."
+code ./debug_screen.png
