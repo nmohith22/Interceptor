@@ -112,5 +112,15 @@ fun SetupScreen(hasNotificationAccess: Boolean, onRequestNotificationAccess: () 
                 Text("Grant Notification Access")
             }
         }
+        
+        Spacer(modifier = Modifier.height(32.dp))
+        val context = androidx.compose.ui.platform.LocalContext.current
+        Button(onClick = {
+            val intent = android.content.Intent(context, CallRingingActivity::class.java)
+            intent.putExtra("INVITE_URL", "https://facetime.apple.com/test-invite")
+            context.startActivity(intent)
+        }) {
+            Text("Simulate Incoming FaceTime")
+        }
     }
 }
